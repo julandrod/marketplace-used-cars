@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(Role, { foreignKey: "roleId" });
       this.hasMany(Car, { foreignKey: "sellerId" });
       this.hasMany(Message, { foreignKey: "senderId" });
-      this.hasMany(Review, { foreignKey: "userId" });
+      this.hasMany(Review, { as: "seller", foreignKey: "sellerId" });
+      this.hasMany(Review, { as: "reviewer", foreignKey: "reviewerId" });
     }
   }
   User.init(
