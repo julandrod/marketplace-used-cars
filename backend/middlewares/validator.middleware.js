@@ -11,8 +11,10 @@ const dataValidator = (schema) => {
 
     if (errors.isEmpty()) return next();
 
-    return res.status(StatusCodes.BAD_REQUEST).json({ erros: errors.array() });
+    const error = errors.array().map((item) => item.msg).join(", ");
+
+    return res.status(StatusCodes.BAD_REQUEST).json({ error });
   };
 };
 
-module.exports = dataValidator
+module.exports = dataValidator;
