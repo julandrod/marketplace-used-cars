@@ -45,9 +45,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      lastPlate: {
+      plate: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        unique: true,
       },
       city: {
         type: Sequelize.STRING,
@@ -73,7 +74,6 @@ module.exports = {
           "roadster",
           "minivan",
         ],
-        allowNull: false,
       },
       fuel: {
         type: Sequelize.ENUM,
