@@ -4,7 +4,7 @@ const errorHandler = (err, req, res, next) => {
     message: err.message || err,
   };
 
-  if (err.errors.length > 0) {
+  if (err.errors && err.errors.length > 0) {
     customError.message = Object.values(err.errors)
       .map((item) => item.message)
       .join(", ");
