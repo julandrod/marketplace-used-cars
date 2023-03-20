@@ -30,7 +30,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       version: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       color: {
         type: DataTypes.STRING,
@@ -52,9 +51,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      lastPlate: {
+      plate: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        unique: true,
       },
       city: {
         type: DataTypes.STRING,
